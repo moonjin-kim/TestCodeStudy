@@ -79,7 +79,7 @@ class CafeKioskTest {
         assertThat(cafeKiosk.getBeverages().size()).isEqualTo(0);
     }
 
-    @DisplayName("추가한 주문 목록의 총합을 알 수 있다.")
+    @DisplayName("주문 목록에 담긴 상품들의 총 금액을 계산할 수 있다.")
     @Test
     void calculateTotalPrice() {
         CafeKiosk cafeKiosk = new CafeKiosk();
