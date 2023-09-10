@@ -20,9 +20,9 @@ public class CafeKiosk {
         beverages.add(beverage);
     }
 
-    public void add(Beverage beverage,int count) throws IllegalAccessException {
+    public void add(Beverage beverage,int count) {
         if(count <= 0 ){
-            throw new IllegalAccessException("음료는 1잔 이상 주문하실 수 있습니다.");
+            throw new IllegalArgumentException("음료는 1잔 이상 주문하실 수 있습니다.");
         }
 
         for(int i = 0; i < count; i++){
@@ -41,8 +41,8 @@ public class CafeKiosk {
 
     public int calculateTotalPrice() {
         return beverages.stream()
-                            .mapToInt(Beverage::getPrice)
-                            .sum();
+                .mapToInt(Beverage::getPrice)
+                .sum();
     }
 
     public Order createOrder(LocalDateTime currentDateTime){
