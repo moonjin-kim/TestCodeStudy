@@ -13,6 +13,7 @@ public class ProductResponse {
     private ProductType type;
     private ProductSellingStatus sellingStatus;
     private String name;
+    private int price;
 
     @Builder
     private ProductResponse(Long id, String productNumber, ProductType type, ProductSellingStatus sellingStatus, String name, int price) {
@@ -23,8 +24,6 @@ public class ProductResponse {
         this.name = name;
         this.price = price;
     }
-
-    private int price;
 
     public static ProductResponse of(Product product){
         return ProductResponse.builder()
